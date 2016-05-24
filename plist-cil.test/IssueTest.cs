@@ -126,6 +126,16 @@ namespace plistcil.test
             NSDictionary dict = (NSDictionary)PropertyListParser.Parse(new FileInfo("test-files/issue49.plist"));
             Assert.AreEqual(0, dict.Count);
         }
+
+        [Test]
+        public static void RoundtripTest()
+        {
+            var expected = File.ReadAllText(@"test-files\Roundtrip.plist");
+            var value = XmlPropertyListParser.Parse(new FileInfo(@"test-files\Roundtrip.plist"));
+            var actual = value.ToXmlPropertyList();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 
