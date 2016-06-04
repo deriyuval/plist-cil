@@ -139,8 +139,8 @@ namespace Claunia.PropertyList
             }
             else
             {
-                bool isTrue = string.Equals(text, "true", StringComparison.InvariantCultureIgnoreCase) || string.Equals(text, "yes", StringComparison.InvariantCultureIgnoreCase);
-                bool isFalse = string.Equals(text, "false", StringComparison.InvariantCultureIgnoreCase) || string.Equals(text, "no", StringComparison.InvariantCultureIgnoreCase);
+                bool isTrue = string.Equals(text, "true", StringComparison.OrdinalIgnoreCase) || string.Equals(text, "yes", StringComparison.OrdinalIgnoreCase);
+                bool isFalse = string.Equals(text, "false", StringComparison.OrdinalIgnoreCase) || string.Equals(text, "no", StringComparison.OrdinalIgnoreCase);
 
                 if (isTrue || isFalse)
                 {
